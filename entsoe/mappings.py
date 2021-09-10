@@ -77,7 +77,7 @@ class Area(enum.Enum):
     IE =            '10YIE-1001A00010', 'Ireland, EirGrid CA',                          'Europe/Dublin',
     IT =            '10YIT-GRTN-----B', 'Italy, IT CA / MBA',                           'Europe/Rome',
     IT_SACO_AC =    '10Y1001A1001A885', 'Italy_Saco_AC',                                'Europe/Rome',
-    IT_CALA =   '10Y1001C--00096J', 'IT-Calabria BZ',                                'Europe/Rome',
+    IT_CALA =       '10Y1001C--00096J', 'IT-Calabria BZ',                               'Europe/Rome',
     IT_SACO_DC =    '10Y1001A1001A893', 'Italy_Saco_DC',                                'Europe/Rome',
     IT_BRNN =       '10Y1001A1001A699', 'IT-Brindisi BZ',                               'Europe/Rome',
     IT_CNOR =       '10Y1001A1001A70O', 'IT-Centre-North BZ',                           'Europe/Rome',
@@ -134,7 +134,8 @@ class Area(enum.Enum):
     UA =            '10Y1001C--00003F', 'Ukraine, Ukraine BZ, MBA',                     'Europe/Kiev',
     UA_DOBTPP =     '10Y1001A1001A869', 'Ukraine-DobTPP CTA',                           'Europe/Kiev',
     UA_BEI =        '10YUA-WEPS-----0', 'Ukraine BEI CTA',                              'Europe/Kiev',
-    UA_IPS =        '10Y1001C--000182', 'Ukraine IPS CTA',                              'Europe/Kiev'
+    UA_IPS =        '10Y1001C--000182', 'Ukraine IPS CTA',                              'Europe/Kiev',
+    XK =            '10Y1001C--00100H', 'Control Area Kosovo',                          'Europe/Belgrade'
 
 
 PSRTYPE_MAPPINGS = {
@@ -170,6 +171,7 @@ DOCSTATUS = {'A01': 'Intermediate',
              'A02': 'Final',
              'A05': 'Active',
              'A09': 'Cancelled',
+             'A13': 'Withdrawn',
              'X01': 'Estimated'}
 
 BSNTYPE = {'A29': 'Already allocated capacity (AAC)',
@@ -304,13 +306,12 @@ NEIGHBOURS = {
     'NO_3': ['NO_4', 'NO_5', 'SE_2'],
     'IT': ['AT', 'FR', 'GR', 'MT', 'ME', 'SI', 'CH'],
     'IT_BRNN': ['GR', 'IT_SUD'],
-    'IT_SUD': ['IT_BRNN', 'IT_CSUD', 'IT_FOGN', 'IT_ROSN', 'IT_CALA'],
+    'IT_SUD': ['IT_BRNN', 'IT_CSUD', 'IT_FOGN', 'IT_ROSN'],
     'IT_FOGN': ['IT_SUD'],
     'IT_ROSN': ['IT_SICI', 'IT_SUD'],
     'IT_CSUD': ['IT_CNOR', 'IT_SARD', 'IT_SUD'],
     'IT_CNOR': ['IT_NORD', 'IT_CSUD', 'IT_SARD'],
     'IT_SARD': ['IT_CNOR', 'IT_CSUD'],
-    'IT_SICI': ['IT_CALA', 'IT_ROSN', 'MT'],
-    'IT_CALA': ['IT_SICI', 'IT_SUD'],
+    'IT_SICI': ['IT_ROSN', 'MT'],
     'MT': ['IT_SICI']
 }
